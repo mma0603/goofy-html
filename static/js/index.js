@@ -22,7 +22,7 @@ function initPrices() {
     Object.keys(priceMapping).forEach(function(key){
         document.getElementById(key).textContent = getRub(priceMapping[key]);
         document.getElementById(key).classList.add('whiteColor');
-    })
+    });
 }
 
 function initPage(){
@@ -59,7 +59,7 @@ function discount(){
         element.textContent = getRub(priceMappingCurrent[key]);
         element.classList.add(colorClass.add);
         element.classList.remove(colorClass.remove);
-    })
+    });
     document.getElementById('image').src = image;
     
     colorClass.add = colorClass.remove;
