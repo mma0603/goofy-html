@@ -18,27 +18,35 @@
     <table>
         <tr>
             <td>Мужская стрижка</td>
-            <td><b>1300 ₽</b></td>
+            <td><b id="price1">1300 ₽</b></td>
         </tr>
         <tr>
             <td>Детская стрижка</td>
-            <td><b>600 ₽</b></td>
+            <td><b id="price2">600 ₽</b></td>
         </tr>
         <tr>
             <td>Стрижка машинкой</td>
-            <td><b>700 ₽</b></td>
+            <td><b id="price3">700 ₽</b></td>
         </tr>
         <tr>
             <td>Стрижка бороды</td>
-            <td><b>900 ₽</b></td>
+            <td><b id="price4">900 ₽</b></td>
         </tr>
         <tr>
             <td>Бритьё головы</td>
-            <td><b>900 ₽</b></td>
+            <td><b id="price5">900 ₽</b></td>
         </tr>
+        <tr>
+            <td>Скидка панкам!</td>
+            <td><b><button id="discountButton" class="discountButton" onclick="discount()">
+                Применить
+            </button></b></td>
+        </tr>
+        
     </table>
-    <img src="./static/img/man.jpg" width="40%">
+    <img id="image" src="./static/img/man.jpg" width="40%" class="serviceImage">
 </div>
 
 </body>
+<script src="static/js/index.js"></script>
 </html>
