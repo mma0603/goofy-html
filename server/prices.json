@@ -1,0 +1,14 @@
+{
+    "prices": { 
+        "price1": 1300,
+        "price2": 600,
+        "price3": 700,
+        "price4": 900,
+        "price5": 900
+    },
+    "pricesDiscount": {
+        "price1": 1100,
+        "price3": 600,
+        "price5": 800
+    }
+}

@@ -1,18 +1,8 @@
 let buttonState = true;
+let serverUrl = 'http://localhost:3000/'
 
-let priceMapping = {
-    price1: 1300,
-    price2: 600,
-    price3: 700,
-    price4: 900,
-    price5: 900,
-}
-let priceMappingDiscount = {
-    price1: 1100,
-    price3: 600,
-    price5: 800,
-}
-
+var priceMapping = {};
+var priceMappingDiscount = {};
 
 function getRub(amount) {
     return amount + ' ₽';
@@ -25,8 +15,17 @@ function initPrices() {
     });
 }
 
-function initPage(){
+async function get(path) {
+    let data = await fetch(serverUrl + 'api/v1/' + path);
+    return await data.json();
+}
+
+async function initPage(){
     console.log('Page initialization');
+    let data = await get('prices');
+    priceMapping = data.prices;
+    priceMappingDiscount = data.pricesDiscount;
+
     initPrices();
 }
 
@@ -42,7 +41,7 @@ function discount(){
         button.textContent = 'Я не панк(';
         button.className = 'discountButtonCancel';
         priceMappingCurrent = priceMappingDiscount;
-        image = './static/img/punk.jpg';
+        image = serverUrl + 'static/img/punk.jpg';
         colorClass.remove = 'whiteColor';
         
     }
@@ -50,7 +49,7 @@ function discount(){
         button.textContent = 'Применить';
         button.className = 'discountButton';
         priceMappingCurrent = priceMapping;
-        image = './static/img/man.jpg';
+        image = serverUrl + 'static/img/man.jpg';
         colorClass.remove = 'redColor';
     }
 

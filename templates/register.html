@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="http://localhost:3000/static/css/index.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="http://localhost:3000/static/js/form.js"></script>
+</head>
+<body>
+
+<ul>
+  <li><a href="index" class="colored"><b><i>ChillBarber</i></b></a></li>
+  <li><a href="index">Главная</a></li>
+  <li><a href="service">Услуги</a></li>
+  <li><a href="contacts">Контакты</a></li>
+  <li><a href="register" class="selected">Запись</a></li>
+</ul>
+<h1 class="header">Записаться на прием</h1>
+<i class="textblock">
+    Ознакомиться с нашими услугами - <a href="service"
+    class="coloredLink">"Услуги"</a>
+    Уже определились с выбором?
+    Можете записаться на прием или прийти к нам!
+    Подробнее - <a href="contacts"
+    class="coloredLink">"Контакты"</a>
+
+  </i>
+
+  <input type="text" id="textField" class="inputField" placeholder="Ваше имя">
+  <input type="tel" id="telField" class="inputField" placeholder="Ваш телефон">
+  <input type="button" id="sendFormButton" class="inputField" value="Отправить", onclick="sendForm()">
+</body>
+</html>
