@@ -1,17 +1,35 @@
 import mongoose from "mongoose";
-import { Record } from "../entitiy/record.js";
+import { Record } from "../entity/record.js";
 
 
-export async function findRecords() {
-    return await Record.find({}).sort({createdAt: -1});
-}
+export class recordService{
+    static async find() {
+        return await Record.find({}).sort({createdAt: -1});
+    }
 
-export function createRecord(name, phone) {
-    let record = new Record({
-        _id: new mongoose.Types.ObjectId(),
-        name: name,
-        phone: phone
-    });
-    record.save();
-    return record;
+    static async findOne(id) {
+        return await Record.findById(id)
+    }
+    
+    static create(name, phone) {
+        let record = new Record({
+            _id: new mongoose.Types.ObjectId(),
+            name: name,
+            phone: phone
+        });
+        record.save();
+        return record;
+    }
+
+    static async update(id, name, phone) {
+        let record = await Record.findById(id);
+        record.name = name;
+        record.phone = phone;
+        record.save();
+        return record;
+    }
+
+    static async delete(id) {
+        await Record.deleteOne({_id: id});
+    }
 }

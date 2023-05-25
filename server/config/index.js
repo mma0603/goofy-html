@@ -1,4 +1,4 @@
-import prices from '../prices.json' assert { type: "json" };
+import prices from '../prices.json' assert { type: 'json' };
 
 
 export class Settings {
